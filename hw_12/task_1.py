@@ -6,18 +6,30 @@ search word. Using this word, search for GIFs using the
 Giphy API. As a result, print the links to the GIFs. '''
 
 
+def get_api_key():
+    try:
+        with open("api_key.txt", "r") as file:
+            return file.readline().strip()
+    except FileNotFoundError:
+        print("Файл api_key.txt не знайдено.")
+        return None
+
+
 def search_gifs(query):
-    api_key = "kpbVJJpDNjRKle2t4JWHlBexh884BnUU"
+    api_key = get_api_key()
+    
+    if api_key is None:
+        return []
+
     base_url = "http://api.giphy.com/v1/gifs/search"
     params = {
         "api_key": api_key,
         "q": query,
-        "limit": 5  # Кількість GIF-зображень для отримання
+        "limit": 5
     }
 
     response = requests.get(base_url, params=params)
     data = response.json()
-    # print(response.status_code)
 
     if response.status_code == 200:
         gif_links = [gif["images"]["original"]["url"] for gif in data["data"]]
@@ -39,5 +51,5 @@ def main():
         print("GIF-зображення не знайдено.")
 
 
-# if __name__ == "__main__":
-main()
+if __name__ == "__main__":
+    main()
