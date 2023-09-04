@@ -1,4 +1,5 @@
 import requests
+import os
 
 '''Create a program that allows you to search for images
 in gif format. The program should allow you to enter a
@@ -7,17 +8,18 @@ Giphy API. As a result, print the links to the GIFs. '''
 
 
 def get_api_key():
-    try:
-        with open("api_key.txt", "r") as file:
+    api_key_file = 'api_key.txt'
+
+    if os.path.isfile(api_key_file):
+        with open(api_key_file, 'r') as file:
             return file.readline().strip()
-    except FileNotFoundError:
-        print("Файл api_key.txt не знайдено.")
-        return None
+    else:
+        raise Exception("Файл api_key.txt не знайдено. Будь ласка, додайте ваш API ключ у цей файл.")
 
 
 def search_gifs(query):
     api_key = get_api_key()
-    
+
     if api_key is None:
         return []
 
