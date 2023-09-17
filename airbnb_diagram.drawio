@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-09-17T21:27:24.735Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="P1g_8SAjlC_yDIqb_Ruj" version="21.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-09-17T21:37:56.318Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0" etag="D7CGO0eqpoy_YFeSUssg" version="21.7.5" type="github">
   <diagram name="Page-1" id="Z0HuvLNnyqdhcLAE6yh6">
     <mxGraphModel dx="1434" dy="822" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
       <root>
@@ -457,10 +457,10 @@
         <mxCell id="81nx8-U1ZOVrm1HPdzTD-191" value="table Rooms має PK id та FK host_id, що посилається на table Users -&amp;gt; id" style="shape=note;size=20;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
           <mxGeometry x="570" y="210" width="330" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="81nx8-U1ZOVrm1HPdzTD-193" value="table Reviews має PK id та FK user_id, що посилається на table Users -&amp;gt; id" style="shape=note;size=20;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+        <mxCell id="81nx8-U1ZOVrm1HPdzTD-193" value="table Reviews має PK id та FK payment_id, що посилається на table Payments -&amp;gt; id" style="shape=note;size=20;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
           <mxGeometry x="30" y="800" width="330" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="81nx8-U1ZOVrm1HPdzTD-194" value="table Reservations має PK id та FK room_id, що посилається на table Rooms -&amp;gt; id, та FKs&#39; host_id і guest_id, що посилаються на table Users -&amp;gt; id" style="shape=note;size=20;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+        <mxCell id="81nx8-U1ZOVrm1HPdzTD-194" value="table Reservations має PK id та FK room_id, що посилається на table Rooms -&amp;gt; id, та FK guest_id, що посилаються на table Users -&amp;gt; id" style="shape=note;size=20;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
           <mxGeometry x="570" y="590" width="330" height="100" as="geometry" />
         </mxCell>
         <mxCell id="81nx8-U1ZOVrm1HPdzTD-198" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="81nx8-U1ZOVrm1HPdzTD-170" target="7vJcycsBGnPZtexE94gR-88">
@@ -472,7 +472,8 @@
         <mxCell id="81nx8-U1ZOVrm1HPdzTD-223" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#009900;strokeColor=#009900;" edge="1" parent="1" source="7vJcycsBGnPZtexE94gR-91" target="7vJcycsBGnPZtexE94gR-101">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="500" y="785" />
+              <mxPoint x="570" y="770" />
+              <mxPoint x="500" y="770" />
               <mxPoint x="500" y="355" />
             </Array>
           </mxGeometry>
