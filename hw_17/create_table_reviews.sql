@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS reviews (
     id SERIAL PRIMARY KEY,
-    payment_id INTEGER REFERENCES payments(id),
+    payment_id INTEGER REFERENCES payments(id) ON DELETE CASCADE,
     review_type VARCHAR(20) NOT NULL,
     rating DECIMAL(3,1) NOT NULL,
     comment TEXT NOT NULL,

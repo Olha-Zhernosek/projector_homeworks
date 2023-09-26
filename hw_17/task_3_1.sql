@@ -1,10 +1,10 @@
 --1. Find a user who had the biggest amount ADD
 --of reservations. Return user name and user_id
 
-SELECT u.id, u.user_name
-FROM users AS u
-JOIN reservations r ON u.id = r.guest_id
-GROUP BY u.id, u.user_name
-ORDER BY COUNT(*) DESC
+SELECT users.user_name, users.id, COUNT(reservations.id) AS reservation_count
+FROM users
+LEFT JOIN reservations ON users.id = reservations.guest_id
+GROUP BY users.user_name, users.id
+ORDER BY reservation_count DESC
 LIMIT 1;
 

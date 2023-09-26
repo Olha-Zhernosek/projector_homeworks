@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS reservations (
     id SERIAL PRIMARY KEY,
     room_id INTEGER REFERENCES rooms(id),
-    guest_id INTEGER REFERENCES users(id),
+    guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
